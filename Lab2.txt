@@ -1,0 +1,246 @@
+[1. Управление пользователями]
+
+// Добавим нового пользователя //
+
+nesterukia@nesterukia-VirtualBox:~$ sudo adduser new_user
+[sudo] password for nesterukia: 
+Adding user `new_user' ...
+Adding new group `new_user' (1001) ...
+Adding new user `new_user' (1001) with group `new_user' ...
+Creating home directory `/home/new_user' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for new_user
+Enter the new value, or press ENTER for the default
+	Full Name []: New User
+	Room Number []: 666
+	Work Phone []: 123
+	Home Phone []: 456
+	Other []: manager
+Is the information correct? [Y/n] y
+
+// Посмотрим список всех пользователей //
+
+nesterukia@nesterukia-VirtualBox:~$ cat /etc/passwd
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:102:105::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:103:106:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+syslog:x:104:111::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:112:TPM software stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:115::/run/uuidd:/usr/sbin/nologin
+systemd-oom:x:108:116:systemd Userspace OOM Killer,,,:/run/systemd:/usr/sbin/nologin
+tcpdump:x:109:117::/nonexistent:/usr/sbin/nologin
+avahi-autoipd:x:110:119:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/usr/sbin/nologin
+usbmux:x:111:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+dnsmasq:x:112:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+kernoops:x:113:65534:Kernel Oops Tracking Daemon,,,:/:/usr/sbin/nologin
+avahi:x:114:121:Avahi mDNS daemon,,,:/run/avahi-daemon:/usr/sbin/nologin
+cups-pk-helper:x:115:122:user for cups-pk-helper service,,,:/home/cups-pk-helper:/usr/sbin/nologin
+rtkit:x:116:123:RealtimeKit,,,:/proc:/usr/sbin/nologin
+whoopsie:x:117:124::/nonexistent:/bin/false
+sssd:x:118:125:SSSD system user,,,:/var/lib/sss:/usr/sbin/nologin
+speech-dispatcher:x:119:29:Speech Dispatcher,,,:/run/speech-dispatcher:/bin/false
+nm-openvpn:x:120:126:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+saned:x:121:128::/var/lib/saned:/usr/sbin/nologin
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+nesterukia:x:1000:1000:nesterukia,,,:/home/nesterukia:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+new_user:x:1001:1001:New User,666,123,456,manager:/home/new_user:/bin/bash
+
+// Удалим пользователя //
+
+nesterukia@nesterukia-VirtualBox:~$ sudo deluser new_user
+Removing user `new_user' ...
+Warning: group `new_user' has no more members.
+Done.
+
+// Посмотрим текущий список пользователей //
+
+nesterukia@nesterukia-VirtualBox:~$ cat /etc/passwd
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:102:105::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:103:106:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+syslog:x:104:111::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:112:TPM software stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:115::/run/uuidd:/usr/sbin/nologin
+systemd-oom:x:108:116:systemd Userspace OOM Killer,,,:/run/systemd:/usr/sbin/nologin
+tcpdump:x:109:117::/nonexistent:/usr/sbin/nologin
+avahi-autoipd:x:110:119:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/usr/sbin/nologin
+usbmux:x:111:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+dnsmasq:x:112:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+kernoops:x:113:65534:Kernel Oops Tracking Daemon,,,:/:/usr/sbin/nologin
+avahi:x:114:121:Avahi mDNS daemon,,,:/run/avahi-daemon:/usr/sbin/nologin
+cups-pk-helper:x:115:122:user for cups-pk-helper service,,,:/home/cups-pk-helper:/usr/sbin/nologin
+rtkit:x:116:123:RealtimeKit,,,:/proc:/usr/sbin/nologin
+whoopsie:x:117:124::/nonexistent:/bin/false
+sssd:x:118:125:SSSD system user,,,:/var/lib/sss:/usr/sbin/nologin
+speech-dispatcher:x:119:29:Speech Dispatcher,,,:/run/speech-dispatcher:/bin/false
+nm-openvpn:x:120:126:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+saned:x:121:128::/var/lib/saned:/usr/sbin/nologin
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+nesterukia:x:1000:1000:nesterukia,,,:/home/nesterukia:/bin/bash
+sshd:x:128:65534::/run/sshd:/usr/sbin/nologin
+
+
+
+[2. Управление группами]
+
+// Создадим 2 группы//
+
+nesterukia@nesterukia-VirtualBox:~$ sudo addgroup new_group
+[sudo] password for nesterukia: 
+Adding group `new_group' (GID 1001) ...
+Done.
+
+nesterukia@nesterukia-VirtualBox:~$ sudo addgroup other_group
+Adding group `other_group' (GID 1004) ...
+Done.
+
+// Создадим пользователя test//
+
+nesterukia@nesterukia-VirtualBox:~$ sudo adduser test
+Adding user `test' ...
+Adding new group `test' (1005) ...
+Adding new user `test' (1002) with group `test' ...
+Creating home directory `/home/test' ...
+Copying files from `/etc/skel' ...
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for test
+Enter the new value, or press ENTER for the default
+	Full Name []: test
+	Room Number []: test
+	Work Phone []: test
+	Home Phone []: test
+	Other []: test
+Is the information correct? [Y/n] y
+
+// Проверим текущие группы пользователя //
+
+nesterukia@nesterukia-VirtualBox:~$ groups test
+test : test
+
+// Заменим основную группу//
+
+nesterukia@nesterukia-VirtualBox:~$ sudo usermod -g new_group test
+nesterukia@nesterukia-VirtualBox:~$ groups test
+test : new_group
+
+// Добавим пользователя в группу не меняя основной //
+
+nesterukia@nesterukia-VirtualBox:~$ sudo usermod -G other_group test
+nesterukia@nesterukia-VirtualBox:~$ groups test
+test : new_group other_group
+
+// Удалим пользователя из второй группы //
+
+nesterukia@nesterukia-VirtualBox:~$ sudo deluser test other_group
+Removing user `test' from group `other_group' ...
+Done.
+
+// Проверим текущие группы пользователя //
+
+nesterukia@nesterukia-VirtualBox:~$ groups test
+test : new_group
+
+
+[3. Создание пользователя с правами суперпользователя.]
+
+// Создадим нового пользователя //
+
+nesterukia@nesterukia-VirtualBox:~$ sudo adduser super_user
+[sudo] password for nesterukia: 
+Adding user `super_user' ...
+Adding new group `super_user' (1006) ...
+Adding new user `super_user' (1003) with group `super_user' ...
+Creating home directory `/home/super_user' ...
+Copying files from `/etc/skel' ...
+New password: 
+BAD PASSWORD: The password is a palindrome
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for super_user
+Enter the new value, or press ENTER for the default
+	Full Name []: super_user
+	Room Number []: 1
+	Work Phone []: 1
+	Home Phone []: 1
+	Other []: 1
+Is the information correct? [Y/n] y
+
+// Добавляем нового пользователя в группу sudo //
+
+nesterukia@nesterukia-VirtualBox:~$ sudo usermod -aG sudo super_user
+
+// Меняем текущего пользователя на нового //
+
+nesterukia@nesterukia-VirtualBox:~$ su super_user
+Password: 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+// Проверяем возможности нового пользователя//
+
+super_user@nesterukia-VirtualBox:/home/nesterukia$ sudo addgroup test1
+[sudo] password for super_user: 
+Adding group `test1' (GID 1007) ...
+Done.
+super_user@nesterukia-VirtualBox:/home/nesterukia$ 
+
+

@@ -1,0 +1,82 @@
+[1.Inode]
+
+//Создадим файл и заполним его//
+nesterukia@nesterukia-VirtualBox:~$ echo "dfgksfdkgjfshdjkfsdfksvdhjfdfhfjsfkjdkjgfkjdkfdhfjsfjsdfdshfkgsvsfdjfkdfkjvfsbdkvskdvudfvdfdvfjkdvkjfdbfjshdjfhdkskdhfjkdhfjkhdkjfhdjkfhdjkhskjhfkjdshfkdjhfkjhf" > file1.txt
+
+// Скопируем содержимое//
+nesterukia@nesterukia-VirtualBox:~$ cat file1.txt > file2.txt
+
+// Создадим символическую ссылку//
+nesterukia@nesterukia-VirtualBox:~$ ln -s file1.txt file3
+
+// Создадим жесткую ссылку//
+nesterukia@nesterukia-VirtualBox:~$ ln file1.txt file4
+
+// Просмотрим Inode//
+nesterukia@nesterukia-VirtualBox:~$ ls -li
+total 92
+1073230 drwxr-xr-x 2 nesterukia new_group  4096 окт  2 21:58 Desktop
+ 563366 drwxr-xr-x 2 nesterukia new_group  4096 окт  2 21:58 Documents
+1073231 drwxr-xr-x 3 nesterukia new_group  4096 окт  4 00:05 Downloads
+1067157 -rw-r--r-- 2 nesterukia new_group   161 ноя 10 03:41 file1.txt
+1067962 -rw-r--r-- 1 nesterukia new_group   161 ноя 10 03:42 file2.txt
+1068024 lrwxrwxrwx 1 nesterukia new_group     9 ноя 10 03:47 file3 -> file1.txt
+1067157 -rw-r--r-- 2 nesterukia new_group   161 ноя 10 03:41 file4
+1067948 -rw-rw-r-- 1 nesterukia new_group  2047 окт  4 00:04 Lab1
+1068112 -rw-rw-r-- 1 nesterukia new_group 10392 окт  4 23:25 Lab2
+1056445 -rw-r--r-- 1 nesterukia new_group 20573 ноя 10 02:12 Lab3
+1067896 -rw-r--r-- 1 nesterukia new_group    26 ноя  9 20:16 lab3file
+ 563367 drwxr-xr-x 2 nesterukia new_group  4096 окт  2 21:58 Music
+ 921268 drwxr-xr-x 2 nesterukia new_group  4096 окт  2 21:58 Pictures
+1073233 drwxr-xr-x 2 nesterukia new_group  4096 окт  2 21:58 Public
+1073212 drwx------ 6 nesterukia new_group  4096 окт  5 17:04 snap
+1073232 drwxr-xr-x 2 nesterukia new_group  4096 окт  2 21:58 Templates
+1073234 drwxr-xr-x 2 nesterukia new_group  4096 окт  2 21:58 Videos
+
+//Удалим оригинальный файл//
+nesterukia@nesterukia-VirtualBox:~$ rm file1.txt
+
+//Читаем файл с копированным содержанием//
+nesterukia@nesterukia-VirtualBox:~$ cat file2.txt
+dfgksfdkgjfshdjkfsdfksvdhjfdfhfjsfkjdkjgfkjdkfdhfjsfjsdfdshfkgsvsfdjfkdfkjvfsbdkvskdvudfvdfdvfjkdvkjfdbfjshdjfhdkskdhfjkdhfjkhdkjfhdjkfhdjkhskjhfkjdshfkdjhfkjhf
+
+// Читаем файл по символической ссылке//
+nesterukia@nesterukia-VirtualBox:~$ cat file3
+cat: file3: No such file or directory
+
+// Читаем файл по жесткой ссылке//
+nesterukia@nesterukia-VirtualBox:~$ cat file4
+dfgksfdkgjfshdjkfsdfksvdhjfdfhfjsfkjdkjgfkjdkfdhfjsfjsdfdshfkgsvsfdjfkdfkjvfsbdkvskdvudfvdfdvfjkdvkjfdbfjshdjfhdkskdhfjkdhfjkhdkjfhdjkfhdjkhskjhfkjdshfkdjhfkjhf
+
+
+[2.]
+
+nesterukia@nesterukia-VirtualBox:~$ mkdir LAB4
+
+nesterukia@nesterukia-VirtualBox:~$ mv -v "file1.txt" "new_name.txt"
+renamed 'file1.txt' -> 'new_name.txt'
+
+nesterukia@nesterukia-VirtualBox:~$ ln -s new_name.txt new_l
+
+nesterukia@nesterukia-VirtualBox:~$ mv file3 LAB4
+nesterukia@nesterukia-VirtualBox:~$ mv file4 LAB4
+nesterukia@nesterukia-VirtualBox:~$ mv new_l LAB4
+
+[3.]
+
+nesterukia@nesterukia-VirtualBox:~$ echo > fileA.txt
+nesterukia@nesterukia-VirtualBox:~$ echo > fileB.txt
+
+nesterukia@nesterukia-VirtualBox:~$ chmod 664 fileA.txt
+nesterukia@nesterukia-VirtualBox:~$ chmod 600 fileB.txt
+
+nesterukia@nesterukia-VirtualBox:~$ ls -l
+total 104
+{...}
+-rw-rw-r-- 1 nesterukia new_group     1 ноя 10 04:22 fileA.txt
+-rw------- 1 nesterukia new_group     1 ноя 10 04:23 fileB.txt
+{...}
+
+
+
+

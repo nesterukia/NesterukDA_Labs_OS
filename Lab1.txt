@@ -1,0 +1,153 @@
+[Пункты 1-6]
+
+
+nesterukia@nesterukia-VirtualBox:~$ cat /proc/version
+Linux version 5.15.0-48-generic (buildd@lcy02-amd64-080) (gcc (Ubuntu 11.2.0-19ubuntu1) 11.2.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #54-Ubuntu SMP Fri Aug 26 13:26:29 UTC 2022
+
+nesterukia@nesterukia-VirtualBox:~$ pwd
+/home/nesterukia
+
+nesterukia@nesterukia-VirtualBox:~$ mkdir /home/nesterukia/students
+nesterukia@nesterukia-VirtualBox:~$ mkdir /home/nesterukia/mentors
+
+nesterukia@nesterukia-VirtualBox:~$ cd students
+nesterukia@nesterukia-VirtualBox:~/students$ > students_list.txt
+
+nesterukia@nesterukia-VirtualBox:~/students$ cd /home/nesterukia/mentors
+nesterukia@nesterukia-VirtualBox:~/mentors$ > mentors_list.txt
+
+nesterukia@nesterukia-VirtualBox:~/mentors$ cd ~ 
+nesterukia@nesterukia-VirtualBox:~$ nano students_list.txt
+nesterukia@nesterukia-VirtualBox:~$ cat students_list.txt
+
+Borisov Alexandr
+Vinokurova Valeria
+Gorlin Nikita
+Duniashev Kamil'
+Zadesenec Georgiy
+Zol'nikova Darya
+Ivanova Marina
+Korchinskiy Maxim
+Kosenko Kirill
+Lobchenko Anton
+Morev Pavel
+Nesteruk Daniil
+Nizhnikov Konstantin
+Oleynikova Anna
+Petrova Ekaterina
+Sazonov Vladislav
+Sencova Maria
+Sokolova Ekaterina
+Telepnev Maxim
+Husnutdinov Roman
+
+nesterukia@nesterukia-VirtualBox:~$ nano mentors_list.txt
+nesterukia@nesterukia-VirtualBox:~$ cat mentors_list.txt
+
+Elisey Sokolov
+Alexandra Noskova
+Andrey Usychenko
+Viktoria Berenshtein
+Angelina Kulanova 
+Valeria Generalova
+Ekaterina Vinogradova
+Sergey Kashin
+Irina Mostovaya
+Danila Gromyka
+Daria Harchenko
+Fedor Kotin
+Anna Sokolko
+Anastasia Romashina
+Irina Romanova
+Arteom Borisevich
+Daria Lisina
+
+nesterukia@nesterukia-VirtualBox:~$ mv /home/nesterukia/mentors/mentors_list.txt /home/nesterukia/students/mentors_list.txt
+
+nesterukia@nesterukia-VirtualBox:~$ rm -Rfv mentors
+removed directory 'mentors'
+
+nesterukia@nesterukia-VirtualBox:~$ mv students students_and_mentors
+nesterukia@nesterukia-VirtualBox:~$ rm -rf students_and_mentors
+removed 'students_and_mentors/mentors_list.txt'
+removed 'students_and_mentors/students_list.txt'
+removed directory 'students_and_mentors'
+
+[Пункт 7. Подключение по SSH из терминала MacOS.]
+
+seagull1994@MacBook-Pro-Daniil ~ % ssh nesterukia@172.20.10.5
+The authenticity of host '172.20.10.5 (172.20.10.5)' can't be established.
+ED25519 key fingerprint is SHA256:cqTQyLvFQfbLgmgMc66z5ApU95zghGjLS1m30eW4ZEs.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: 192.168.0.6
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '172.20.10.5' (ED25519) to the list of known hosts.
+nesterukia@172.20.10.5's password: 
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-48-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+147 updates can be applied immediately.
+42 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Last login: Mon Oct  3 20:52:56 2022 from 192.168.0.4
+nesterukia@nesterukia-VirtualBox:~$ 
+
+
+
+[Пункт 8. Настроить авторизацию по SSH с
+использованием ключей. Терминал MacOS]
+
+
+seagull1994@MacBook-Pro-Daniil ~ % ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/seagull1994/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/seagull1994/.ssh/id_rsa
+Your public key has been saved in /Users/seagull1994/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:cK7FyyzWaS4o0uyweMPp/PhSYMyHtTEfPEn7szbYBp0 seagull1994@MacBook-Pro-Daniil.local
+The key's randomart image is:
++---[RSA 3072]----+
+|     o..         |
+|    + =.         |
+| o o =oo.        |
+|  * o .B .       |
+| . o  . E        |
+|    .  X =       |
+|.+ o .= &        |
+|o+X....* .       |
+|o==*o  ..        |
++----[SHA256]-----+
+
+seagull1994@MacBook-Pro-Daniil ~ % ssh-copy-id nesterukia@172.20.10.5
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/seagull1994/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+nesterukia@172.20.10.5's password: 
+
+Number of key(s) added:        1
+
+Now try logging into the machine, with:   "ssh 'nesterukia@172.20.10.5'"
+and check to make sure that only the key(s) you wanted were added.
+
+seagull1994@MacBook-Pro-Daniil ~ % ssh nesterukia@172.20.10.5
+Enter passphrase for key '/Users/seagull1994/.ssh/id_rsa': 
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-48-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+147 updates can be applied immediately.
+42 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Last login: Tue Oct  4 00:07:55 2022 from 172.20.10.2
+nesterukia@nesterukia-VirtualBox:~$ 
+
+

@@ -1,0 +1,434 @@
+nesterukia@nesterukia-VirtualBox:~$ ps -eF
+UID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+root           1       0  0 42027  9108   0 ноя09 ?     00:00:25 /sbin/init 
+root           2       0  0     0     0   0 ноя09 ?     00:00:00 [kthreadd]
+root           3       2  0     0     0   0 ноя09 ?     00:00:00 [rcu_gp]
+root           4       2  0     0     0   0 ноя09 ?     00:00:00 [rcu_par_gp
+root           5       2  0     0     0   0 ноя09 ?     00:00:00 [netns]
+root           7       2  0     0     0   0 ноя09 ?     00:00:00 [kworker/0:
+root           9       2  0     0     0   0 ноя09 ?     00:00:06 [kworker/0:
+root          10       2  0     0     0   0 ноя09 ?     00:00:00 [mm_percpu_
+root          11       2  0     0     0   0 ноя09 ?     00:00:00 [rcu_tasks_
+root          12       2  0     0     0   0 ноя09 ?     00:00:00 [rcu_tasks_
+root          13       2  0     0     0   0 ноя09 ?     00:00:03 [ksoftirqd/
+root          14       2  0     0     0   0 ноя09 ?     00:00:19 [rcu_sched]
+root          15       2  0     0     0   0 ноя09 ?     00:00:01 [migration/
+root          16       2  0     0     0   0 ноя09 ?     00:00:00 [idle_injec
+root          18       2  0     0     0   0 ноя09 ?     00:00:00 [cpuhp/0]
+root          19       2  0     0     0   0 ноя09 ?     00:00:00 [kdevtmpfs]
+root          20       2  0     0     0   0 ноя09 ?     00:00:00 [inet_frag_
+root          21       2  0     0     0   0 ноя09 ?     00:00:00 [kauditd]
+root          22       2  0     0     0   0 ноя09 ?     00:00:00 [khungtaskd
+root          23       2  0     0     0   0 ноя09 ?     00:00:00 [oom_reaper
+root          24       2  0     0     0   0 ноя09 ?     00:00:00 [writeback]
+root          25       2  0     0     0   0 ноя09 ?     00:00:09 [kcompactd0
+root          26       2  0     0     0   0 ноя09 ?     00:00:00 [ksmd]
+root          27       2  0     0     0   0 ноя09 ?     00:00:00 [khugepaged
+root          73       2  0     0     0   0 ноя09 ?     00:00:00 [kintegrity
+root          74       2  0     0     0   0 ноя09 ?     00:00:00 [kblockd]
+root          75       2  0     0     0   0 ноя09 ?     00:00:00 [blkcg_punt
+root          76       2  0     0     0   0 ноя09 ?     00:00:00 [tpm_dev_wq
+root          77       2  0     0     0   0 ноя09 ?     00:00:00 [ata_sff]
+root          78       2  0     0     0   0 ноя09 ?     00:00:00 [md]
+root          79       2  0     0     0   0 ноя09 ?     00:00:00 [edac-polle
+root          80       2  0     0     0   0 ноя09 ?     00:00:00 [devfreq_wq
+root          81       2  0     0     0   0 ноя09 ?     00:00:00 [watchdogd]
+root          84       2  0     0     0   0 ноя09 ?     00:00:10 [kswapd0]
+root          85       2  0     0     0   0 ноя09 ?     00:00:00 [ecryptfs-k
+root          87       2  0     0     0   0 ноя09 ?     00:00:00 [kthrotld]
+root          88       2  0     0     0   0 ноя09 ?     00:00:00 [acpi_therm
+root          90       2  0     0     0   0 ноя09 ?     00:00:00 [scsi_eh_0]
+root          91       2  0     0     0   0 ноя09 ?     00:00:00 [scsi_tmf_0
+root          92       2  0     0     0   0 ноя09 ?     00:00:00 [scsi_eh_1]
+root          93       2  0     0     0   0 ноя09 ?     00:00:00 [scsi_tmf_1
+root          95       2  0     0     0   0 ноя09 ?     00:00:00 [vfio-irqfd
+root          97       2  0     0     0   0 ноя09 ?     00:00:00 [mld]
+root          98       2  0     0     0   0 ноя09 ?     00:00:00 [ipv6_addrc
+root         109       2  0     0     0   0 ноя09 ?     00:00:00 [kstrp]
+root         112       2  0     0     0   0 ноя09 ?     00:00:00 [zswap-shri
+root         113       2  0     0     0   0 ноя09 ?     00:00:00 [kworker/u3
+root         118       2  0     0     0   0 ноя09 ?     00:00:00 [charger_ma
+root         157       2  0     0     0   0 ноя09 ?     00:00:00 [scsi_eh_2]
+root         158       2  0     0     0   0 ноя09 ?     00:00:00 [scsi_tmf_2
+root         184       2  0     0     0   0 ноя09 ?     00:00:01 [jbd2/sda3-
+root         185       2  0     0     0   0 ноя09 ?     00:00:00 [ext4-rsv-c
+root         225       1  0 26443 18732   0 ноя09 ?     00:00:03 /lib/system
+root         249       2  0     0     0   0 ноя09 ?     00:00:00 [ipmi-msgha
+root         258       2  0     0     0   0 ноя09 ?     00:00:00 [ttm_swap]
+root         259       2  0     0     0   0 ноя09 ?     00:00:05 [irq/18-vmw
+root         260       2  0     0     0   0 ноя09 ?     00:00:00 [card0-crtc
+root         261       2  0     0     0   0 ноя09 ?     00:00:00 [card0-crtc
+root         266       2  0     0     0   0 ноя09 ?     00:00:00 [card0-crtc
+root         268       2  0     0     0   0 ноя09 ?     00:00:00 [card0-crtc
+root         269       2  0     0     0   0 ноя09 ?     00:00:00 [card0-crtc
+root         271       2  0     0     0   0 ноя09 ?     00:00:00 [card0-crtc
+root         272       2  0     0     0   0 ноя09 ?     00:00:00 [card0-crtc
+root         274       2  0     0     0   0 ноя09 ?     00:00:00 [card0-crtc
+root         285       1  0  6616  3260   0 ноя09 ?     00:00:00 /lib/system
+root         375       2  0     0     0   0 ноя09 ?     00:00:00 [cryptd]
+systemd+     443       1  0  3706  2380   0 ноя09 ?     00:01:54 /lib/system
+systemd+     444       1  0  6382  4672   0 ноя09 ?     00:00:01 /lib/system
+root         617       1  0 62159  4488   0 ноя09 ?     00:00:02 /usr/libexe
+root         620       1  0   703   748   0 ноя09 ?     00:00:01 /usr/sbin/a
+avahi        625       1  0  1939  2716   0 ноя09 ?     00:00:10 avahi-daemo
+root         630       1  0  4537  2072   0 ноя09 ?     00:00:00 /usr/sbin/c
+message+     632       1  0  2770  5204   0 ноя09 ?     00:00:09 @dbus-daemo
+root         635       1  0 85836  9336   0 ноя09 ?     00:00:06 /usr/sbin/N
+root         654       1  0 12421  4232   0 ноя09 ?     00:00:00 /usr/bin/py
+root         657       1  0 62924  7912   0 ноя09 ?     00:00:04 /usr/libexe
+root         661       1  0 62177  4600   0 ноя09 ?     00:00:00 /usr/libexe
+syslog       666       1  0 55600  2824   0 ноя09 ?     00:00:00 /usr/sbin/r
+root         674       1  0 61287  4056   0 ноя09 ?     00:00:00 /usr/libexe
+root         680       1  0  5952  4048   0 ноя09 ?     00:00:01 /lib/system
+root         686       1  0 98260  6900   0 ноя09 ?     00:00:00 /usr/libexe
+root         692       1  0  4123  1936   0 ноя09 ?     00:00:00 /sbin/wpa_s
+avahi        726     625  0  1860    60   0 ноя09 ?     00:00:00 avahi-daemo
+root         748       1  0 79253  4888   0 ноя09 ?     00:00:00 /usr/sbin/M
+root         758       1  0 20530  8424   0 ноя09 ?     00:00:00 /usr/sbin/c
+root         800       1  0 31675  5536   0 ноя09 ?     00:00:00 /usr/bin/py
+root         808       1  0 62466  4992   0 ноя09 ?     00:00:00 /usr/sbin/g
+root         888       1  0 43153  6220   0 ноя09 ?     00:00:00 /usr/sbin/c
+kernoops     892       1  0  3270   128   0 ноя09 ?     00:00:00 /usr/sbin/k
+kernoops     898       1  0  3270   136   0 ноя09 ?     00:00:00 /usr/sbin/k
+rtkit        942       1  0 38500   724   0 ноя09 ?     00:00:01 /usr/libexe
+root        1068       1  0 62748  4576   0 ноя09 ?     00:00:01 /usr/libexe
+root        1180       1  0 113770 23032  0 ноя09 ?     00:00:12 /usr/libexe
+colord      1381       1  0 63485  5368   0 ноя09 ?     00:00:00 /usr/libexe
+root        1427     808  0 81777  6516   0 ноя09 ?     00:00:00 gdm-session
+nesteru+    1438       1  0  4799  7040   0 ноя09 ?     00:00:05 /lib/system
+nesteru+    1439    1438  0 26122   572   0 ноя09 ?     00:00:00 (sd-pam)
+nesteru+    1445    1438  0 12057  2452   0 ноя09 ?     00:00:00 /usr/bin/pi
+nesteru+    1446    1438  0  8028  2212   0 ноя09 ?     00:00:00 /usr/bin/pi
+nesteru+    1447    1438  0 423352 10868  0 ноя09 ?     00:00:22 /usr/bin/pu
+nesteru+    1455       1  0 62384  3732   0 ноя09 ?     00:00:00 /usr/bin/gn
+nesteru+    1459    1438  0  3209  7628   0 ноя09 ?     00:00:08 /usr/bin/db
+nesteru+    1461    1438  0 62348  4912   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1469    1438  0 95221  3732   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1472    1427  0 42759  3740   0 ноя09 tty2  00:00:00 /usr/libexe
+nesteru+    1481    1472  0 57921  5772   0 ноя09 tty2  00:00:00 /usr/libexe
+nesteru+    1495    1438  0 117986 4884   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1499    1438  0 98184  4124   0 ноя09 ?     00:00:00 /usr/libexe
+root        1505    1495  0   698   660   0 ноя09 ?     00:00:00 fusermount3
+nesteru+    1540    1438  0 178961 15732  0 ноя09 ?     00:00:07 /usr/libexe
+nesteru+    1553    1438  0 25139  2884   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1564    1438  0 150423 8000   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1569    1438  0 99623  6924   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1579    1438  0 80992  4408   0 ноя09 ?     00:00:06 /usr/libexe
+nesteru+    1584    1438  0 61548  4092   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1592    1438  0 61307  4084   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1596    1438  0 61320  3836   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1600    1438  0 160908 7388   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1606    1438  1 1039125 283472 0 ноя09 ?    00:28:45 /usr/bin/gn
+nesteru+    1609    1564  0 77403  4904   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1616    1609  0  2140  3028   0 ноя09 ?     00:00:00 /usr/bin/db
+nesteru+    1627    1438  0 105194 5184   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1689    1438  0 158117 8076   0 ноя09 ?     00:00:04 /usr/libexe
+nesteru+    1693    1438  0 208728 35388  0 ноя09 ?     00:00:04 /usr/libexe
+nesteru+    1696    1438  0 145722 5888   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1706    1438  0 171894 8096   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1714    1438  0 179539 7828   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1723    1438  0 39264  3992   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1727    1438  0 172300 7100   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1742    1461  0 80984  5340   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1754    1438  0 652601 16556  0 ноя09 ?     00:00:01 /usr/bin/gj
+nesteru+    1756    1438  0 40669  4428   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1765    1438  0   722   404   0 ноя09 ?     00:00:00 sh -c /usr/
+nesteru+    1767    1438  0 79766  4096   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1769    1765  0 99343  5756   0 ноя09 ?     00:00:22 /usr/bin/ib
+nesteru+    1770    1438  0 114932 8480   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1773    1438  0 96027  6064   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1776    1438  0 80141  4472   0 ноя09 ?     00:00:02 /usr/libexe
+nesteru+    1779    1438  0 87314  7304   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1782    1438  0 162909 9460   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1785    1438  0 162623 10324  0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1789    1438  0 64624  5596   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1790    1438  0 116625 3864   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1792    1438  0 61233  4004   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1793    1438  0 118645 5640   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1801    1438  0 117104 4304   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1805    1438  0 81998  4812   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1812    1438  0 87464  7048   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1813    1564  0 58065  4784   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1845    1769  0 61489  3980   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1846    1769  0 89113  7872   0 ноя09 ?     00:00:05 /usr/libexe
+nesteru+    1854    1564  0 186311 10628  0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1862    1438  0 116809 5156   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1891    1438  0 87751  6008   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    1923    1438  0 315643 134328 0 ноя09 ?     00:00:34 /snap/snap-
+nesteru+    1946    1769  0 43100  5008   0 ноя09 ?     00:00:07 /usr/libexe
+nesteru+    2019    1438  0 88290  8960   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    2028    1438  0 652043 12648  0 ноя09 ?     00:00:00 /usr/bin/gj
+nesteru+    2096    1438  0 42924  4200   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    2643    1564  0 127869 15480  0 ноя09 ?     00:00:03 update-noti
+nesteru+    3894    1606  0 46477  6704   0 ноя09 ?     00:01:33 /usr/bin/Xw
+nesteru+    3897    1438  0 129008 9508   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    3925    1438  0 50628  6492   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    4395    1461  0 99344  5904   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    4414    1461  0 81368  5048   0 ноя09 ?     00:00:00 /usr/libexe
+nesteru+    7698    1438  0 142706 3892   0 ноя09 ?     00:00:01 /usr/bin/sn
+root       15122       1  0 185943 24448  0 ноя09 ?     00:00:24 /usr/lib/sn
+nesteru+   15654    1438  0 77204  3744   0 ноя09 ?     00:00:00 /snap/snapd
+nesteru+   16345    1438  0 190186 58272  0 ноя09 ?     00:00:17 /usr/bin/na
+nesteru+   16378    1461  0 99359  6456   0 ноя09 ?     00:00:00 /usr/libexe
+root       16562       1  0  3856  5196   0 ноя09 ?     00:00:00 sshd: /usr/
+root       21301       2  0     0     0   0 07:11 ?        00:00:00 [kworker/0:
+nesteru+   22232    1606  1 260621 377056 0 08:07 ?        00:05:49 /snap/teleg
+root       24506       2  0     0     0   0 16:16 ?        00:00:00 [kworker/u2
+root       24797       2  0     0     0   0 16:44 ?        00:00:00 [kworker/0:
+root       24812       2  0     0     0   0 16:46 ?        00:00:00 [kworker/u2
+root       24853       2  0     0     0   0 17:05 ?        00:00:00 [kworker/0:
+root       24875       2  0     0     0   0 17:05 ?        00:00:00 [kworker/u2
+nesteru+   24898    1606  0 700477 55656  0 17:06 ?        00:00:00 gjs /usr/sh
+nesteru+   24942    1438  1 142547 50316  0 17:06 ?        00:00:00 /usr/libexe
+nesteru+   24960   24942  0  4949  5156   0 17:06 pts/0    00:00:00 bash
+root       24967       2  0     0     0   0 17:06 ?        00:00:00 [kworker/u2
+nesteru+   24970   24960  0  5331  3412   0 17:06 pts/0    00:00:00 ps -eF
+nesterukia@nesterukia-VirtualBox:~$ ps -e --format="pid cmd ppid c"
+    PID CMD                            PPID  C
+      1 /sbin/init splash                 0  0
+      2 [kthreadd]                        0  0
+      3 [rcu_gp]                          2  0
+      4 [rcu_par_gp]                      2  0
+      5 [netns]                           2  0
+      7 [kworker/0:0H-events_highpr       2  0
+      9 [kworker/0:1H-events_highpr       2  0
+     10 [mm_percpu_wq]                    2  0
+     11 [rcu_tasks_rude_]                 2  0
+     12 [rcu_tasks_trace]                 2  0
+     13 [ksoftirqd/0]                     2  0
+     14 [rcu_sched]                       2  0
+     15 [migration/0]                     2  0
+     16 [idle_inject/0]                   2  0
+     18 [cpuhp/0]                         2  0
+     19 [kdevtmpfs]                       2  0
+     20 [inet_frag_wq]                    2  0
+     21 [kauditd]                         2  0
+     22 [khungtaskd]                      2  0
+     23 [oom_reaper]                      2  0
+     24 [writeback]                       2  0
+     25 [kcompactd0]                      2  0
+     26 [ksmd]                            2  0
+     27 [khugepaged]                      2  0
+     73 [kintegrityd]                     2  0
+     74 [kblockd]                         2  0
+     75 [blkcg_punt_bio]                  2  0
+     76 [tpm_dev_wq]                      2  0
+     77 [ata_sff]                         2  0
+     78 [md]                              2  0
+     79 [edac-poller]                     2  0
+     80 [devfreq_wq]                      2  0
+     81 [watchdogd]                       2  0
+     84 [kswapd0]                         2  0
+     85 [ecryptfs-kthrea]                 2  0
+     87 [kthrotld]                        2  0
+     88 [acpi_thermal_pm]                 2  0
+     90 [scsi_eh_0]                       2  0
+     91 [scsi_tmf_0]                      2  0
+     92 [scsi_eh_1]                       2  0
+     93 [scsi_tmf_1]                      2  0
+     95 [vfio-irqfd-clea]                 2  0
+     97 [mld]                             2  0
+     98 [ipv6_addrconf]                   2  0
+    109 [kstrp]                           2  0
+    112 [zswap-shrink]                    2  0
+    113 [kworker/u3:0]                    2  0
+    118 [charger_manager]                 2  0
+    157 [scsi_eh_2]                       2  0
+    158 [scsi_tmf_2]                      2  0
+    184 [jbd2/sda3-8]                     2  0
+    185 [ext4-rsv-conver]                 2  0
+    225 /lib/systemd/systemd-journa       1  0
+    249 [ipmi-msghandler]                 2  0
+    258 [ttm_swap]                        2  0
+    259 [irq/18-vmwgfx]                   2  0
+    260 [card0-crtc0]                     2  0
+    261 [card0-crtc1]                     2  0
+    266 [card0-crtc2]                     2  0
+    268 [card0-crtc3]                     2  0
+    269 [card0-crtc4]                     2  0
+    271 [card0-crtc5]                     2  0
+    272 [card0-crtc6]                     2  0
+    274 [card0-crtc7]                     2  0
+    285 /lib/systemd/systemd-udevd        1  0
+    375 [cryptd]                          2  0
+    443 /lib/systemd/systemd-oomd         1  0
+    444 /lib/systemd/systemd-resolv       1  0
+    617 /usr/libexec/accounts-daemo       1  0
+    620 /usr/sbin/acpid                   1  0
+    625 avahi-daemon: running [nest       1  0
+    630 /usr/sbin/cron -f -P              1  0
+    632 @dbus-daemon --system --add       1  0
+    635 /usr/sbin/NetworkManager --       1  0
+    654 /usr/bin/python3 /usr/bin/n       1  0
+    657 /usr/libexec/polkitd --no-d       1  0
+    661 /usr/libexec/power-profiles       1  0
+    666 /usr/sbin/rsyslogd -n -iNON       1  0
+    674 /usr/libexec/switcheroo-con       1  0
+    680 /lib/systemd/systemd-logind       1  0
+    686 /usr/libexec/udisks2/udisks       1  0
+    692 /sbin/wpa_supplicant -u -s        1  0
+    726 avahi-daemon: chroot helper     625  0
+    748 /usr/sbin/ModemManager            1  0
+    758 /usr/sbin/cupsd -l                1  0
+    800 /usr/bin/python3 /usr/share       1  0
+    808 /usr/sbin/gdm3                    1  0
+    888 /usr/sbin/cups-browsed            1  0
+    892 /usr/sbin/kerneloops --test       1  0
+    898 /usr/sbin/kerneloops              1  0
+    942 /usr/libexec/rtkit-daemon         1  0
+   1068 /usr/libexec/upowerd              1  0
+   1180 /usr/libexec/packagekitd          1  0
+   1381 /usr/libexec/colord               1  0
+   1427 gdm-session-worker [pam/gdm     808  0
+   1438 /lib/systemd/systemd --user       1  0
+   1439 (sd-pam)                       1438  0
+   1445 /usr/bin/pipewire              1438  0
+   1446 /usr/bin/pipewire-media-ses    1438  0
+   1447 /usr/bin/pulseaudio --daemo    1438  0
+   1455 /usr/bin/gnome-keyring-daem       1  0
+   1459 /usr/bin/dbus-daemon --sess    1438  0
+   1461 /usr/libexec/gvfsd             1438  0
+   1469 /usr/libexec/gvfsd-fuse /ru    1438  0
+   1472 /usr/libexec/gdm-wayland-se    1427  0
+   1481 /usr/libexec/gnome-session-    1472  0
+   1495 /usr/libexec/xdg-document-p    1438  0
+   1499 /usr/libexec/xdg-permission    1438  0
+   1505 fusermount3 -o rw,nosuid,no    1495  0
+   1540 /usr/libexec/tracker-miner-    1438  0
+   1553 /usr/libexec/gnome-session-    1438  0
+   1564 /usr/libexec/gnome-session-    1438  0
+   1569 /usr/libexec/gvfs-udisks2-v    1438  0
+   1579 /usr/libexec/gvfs-afc-volum    1438  0
+   1584 /usr/libexec/gvfs-gphoto2-v    1438  0
+   1592 /usr/libexec/gvfs-mtp-volum    1438  0
+   1596 /usr/libexec/gvfs-goa-volum    1438  0
+   1600 /usr/libexec/goa-daemon        1438  0
+   1606 /usr/bin/gnome-shell           1438  1
+   1609 /usr/libexec/at-spi-bus-lau    1564  0
+   1616 /usr/bin/dbus-daemon --conf    1609  0
+   1627 /usr/libexec/goa-identity-s    1438  0
+   1689 /usr/libexec/xdg-desktop-po    1438  0
+   1693 /usr/libexec/xdg-desktop-po    1438  0
+   1696 /usr/libexec/gnome-shell-ca    1438  0
+   1706 /usr/libexec/evolution-sour    1438  0
+   1714 /usr/libexec/evolution-cale    1438  0
+   1723 /usr/libexec/dconf-service     1438  0
+   1727 /usr/libexec/evolution-addr    1438  0
+   1742 /usr/libexec/gvfsd-trash --    1461  0
+   1754 /usr/bin/gjs /usr/share/gno    1438  0
+   1756 /usr/libexec/at-spi2-regist    1438  0
+   1765 sh -c /usr/bin/ibus-daemon     1438  0
+   1767 /usr/libexec/gsd-a11y-setti    1438  0
+   1769 /usr/bin/ibus-daemon --pane    1765  0
+   1770 /usr/libexec/gsd-color         1438  0
+   1773 /usr/libexec/gsd-datetime      1438  0
+   1776 /usr/libexec/gsd-housekeepi    1438  0
+   1779 /usr/libexec/gsd-keyboard      1438  0
+   1782 /usr/libexec/gsd-media-keys    1438  0
+   1785 /usr/libexec/gsd-power         1438  0
+   1789 /usr/libexec/gsd-print-noti    1438  0
+   1790 /usr/libexec/gsd-rfkill        1438  0
+   1792 /usr/libexec/gsd-screensave    1438  0
+   1793 /usr/libexec/gsd-sharing       1438  0
+   1801 /usr/libexec/gsd-smartcard     1438  0
+   1805 /usr/libexec/gsd-sound         1438  0
+   1812 /usr/libexec/gsd-wacom         1438  0
+   1813 /usr/libexec/gsd-disk-utili    1564  0
+   1845 /usr/libexec/ibus-dconf        1769  0
+   1846 /usr/libexec/ibus-extension    1769  0
+   1854 /usr/libexec/evolution-data    1564  0
+   1862 /usr/libexec/ibus-portal       1438  0
+   1891 /usr/libexec/gsd-printer       1438  0
+   1923 /snap/snap-store/599/usr/bi    1438  0
+   1946 /usr/libexec/ibus-engine-si    1769  0
+   2019 /usr/libexec/xdg-desktop-po    1438  0
+   2028 /usr/bin/gjs /usr/share/gno    1438  0
+   2096 /usr/libexec/gvfsd-metadata    1438  0
+   2643 update-notifier                1564  0
+   3894 /usr/bin/Xwayland :0 -rootl    1606  0
+   3897 /usr/libexec/gsd-xsettings     1438  0
+   3925 /usr/libexec/ibus-x11          1438  0
+   4395 /usr/libexec/gvfsd-network     1461  0
+   4414 /usr/libexec/gvfsd-dnssd --    1461  0
+   7698 /usr/bin/snap userd            1438  0
+  15122 /usr/lib/snapd/snapd              1  0
+  15654 /snap/snapd-desktop-integra    1438  0
+  16345 /usr/bin/nautilus --gapplic    1438  0
+  16378 /usr/libexec/gvfsd-recent -    1461  0
+  16562 sshd: /usr/sbin/sshd -D [li       1  0
+  21301 [kworker/0:2-events]              2  0
+  22232 /snap/telegram-desktop/4353    1606  1
+  24506 [kworker/u2:2-events_unboun       2  0
+  24797 [kworker/0:0-events]              2  0
+  24812 [kworker/u2:0-flush-8:0]          2  0
+  24853 [kworker/0:1-events]              2  0
+  24875 [kworker/u2:1-events_unboun       2  0
+  24898 gjs /usr/share/gnome-shell/    1606  0
+  24942 /usr/libexec/gnome-terminal    1438  0
+  24960 bash                          24942  0
+  24967 [kworker/u2:3-flush-8:0]          2  0
+  24974 ps -e --format=pid cmd ppid   24960  0
+
+----Проанализируем процессы:----------------
+1606 /usr/bin/gnome-shell           1438  1
+22232 /snap/telegram-desktop/4353    1606  1
+--------------------------------------------
+
+nesterukia@nesterukia-VirtualBox:~$ pstree -sp 1606
+systemd(1)───systemd(1438)───gnome-shell(1606)─┬─Xwayland(3894)
+                                               ├─gjs(24898)─┬─{gjs}(24900)
+                                               │            ├─{gjs}(24901)
+                                               │            ├─{gjs}(24902)
+                                               │            ├─{gjs}(24903)
+                                               │            └─{gjs}(24913)
+                                               ├─telegram-deskto(22232)─┬─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        ├─{tel+
+                                               │                        └─{tel+
+                                               ├─{gnome-shell}(1622)
+                                               ├─{gnome-shell}(1631)
+                                               ├─{gnome-shell}(1637)
+                                               ├─{gnome-shell}(1639)
+                                               ├─{gnome-shell}(1644)
+                                               ├─{gnome-shell}(1655)
+                                               ├─{gnome-shell}(1656)
+                                               ├─{gnome-shell}(3807)
+                                               └─{gnome-shell}(3931)
+nesterukia@nesterukia-VirtualBox:~$ pstree -sp 22232
+systemd(1)───systemd(1438)───gnome-shell(1606)───telegram-deskto(22232)─┬─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        ├─{tel+
+                                                                        └─{tel+
+

@@ -1,0 +1,156 @@
+nesterukia@nesterukia-VirtualBox:~$ sudo apt-get update
+Сущ:1 http://nginx.org/packages/mainline/ubuntu xenial InRelease
+Сущ:2 http://ru.archive.ubuntu.com/ubuntu xenial InRelease                                                               
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu xenial-updates InRelease                                                                            
+Сущ:4 http://ru.archive.ubuntu.com/ubuntu xenial-backports InRelease                                                                     
+Сущ:5 http://security.ubuntu.com/ubuntu xenial-security InRelease                                                                             
+Сущ:6 http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial InRelease                                                                
+Сущ:7 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease                                                                       
+Сущ:8 https://dbeaver.io/debs/dbeaver-ce  InRelease
+Чтение списков пакетов… Готово
+
+nesterukia@nesterukia-VirtualBox:~$ sudo apt-get install \
+> apt-transport-https \
+> ca-certificates \
+> curl \
+> gnupg \
+> lsb-release
+Чтение списков пакетов… Готово
+Построение дерева зависимостей      
+Чтение информации о состоянии… Готово
+Уже установлен пакет ca-certificates самой новой версии (20210119~16.04.1).
+Уже установлен пакет gnupg самой новой версии (1.4.20-1ubuntu3.3).
+Уже установлен пакет lsb-release самой новой версии (9.20160110ubuntu0.2).
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  linux-headers-4.15.0-45 linux-headers-4.15.0-45-generic linux-image-4.15.0-45-generic linux-modules-4.15.0-45-generic
+  linux-modules-extra-4.15.0-45-generic snapd-login-service
+Для их удаления используйте «sudo apt autoremove».
+Следующие НОВЫЕ пакеты будут установлены:
+  curl
+Следующие пакеты будут обновлены:
+  apt-transport-https
+Обновлено 1 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 77 пакетов не обновлено.
+Необходимо скачать 165 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 341 kB.
+Хотите продолжить? [Д/н] Д
+Пол:1 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.35 [26,6 kB]
+Пол:1 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.35 [26,6 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.19 [139 kB]
+Получено 152 kB за 0с (187 kB/s)
+(Чтение базы данных … на данный момент установлено 257684 файла и каталога.)
+Подготовка к распаковке …/apt-transport-https_1.2.35_amd64.deb …
+Распаковывается apt-transport-https (1.2.35) на замену (1.2.32ubuntu0.2) …
+Выбор ранее не выбранного пакета curl.
+Подготовка к распаковке …/curl_7.47.0-1ubuntu2.19_amd64.deb …
+Распаковывается curl (7.47.0-1ubuntu2.19) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Настраивается пакет apt-transport-https (1.2.35) …
+Настраивается пакет curl (7.47.0-1ubuntu2.19) …
+
+nesterukia@nesterukia-VirtualBox:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+nesterukia@nesterukia-VirtualBox:~$ echo \
+>   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+>   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+nesterukia@nesterukia-VirtualBox:~$ sudo apt-get update
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu xenial InRelease
+Сущ:2 http://nginx.org/packages/mainline/ubuntu xenial InRelease                                                                                        
+Сущ:3 http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial InRelease                                                                          
+Сущ:4 http://security.ubuntu.com/ubuntu xenial-security InRelease                                                                                  
+Сущ:5 http://ru.archive.ubuntu.com/ubuntu xenial-updates InRelease                                                                                 
+Сущ:6 http://ru.archive.ubuntu.com/ubuntu xenial-backports InRelease                                                            
+Сущ:7 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease                                    
+Пол:8 https://download.docker.com/linux/ubuntu xenial InRelease [66,2 kB]
+Сущ:9 https://dbeaver.io/debs/dbeaver-ce  InRelease            
+Пол:10 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages [21,0 kB]
+Получено 87,2 kB за 1с (53,8 kB/s)                        
+Чтение списков пакетов… Готово
+
+nesterukia@nesterukia-VirtualBox:~$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+Чтение списков пакетов… Готово
+Построение дерева зависимостей      
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  linux-headers-4.15.0-45 linux-headers-4.15.0-45-generic linux-image-4.15.0-45-generic linux-modules-4.15.0-45-generic
+  linux-modules-extra-4.15.0-45-generic snapd-login-service
+Для их удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  docker-ce-rootless-extras docker-scan-plugin git git-man liberror-perl pigz
+Предлагаемые пакеты:
+  aufs-tools cgroupfs-mount | cgroup-lite git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-arch git-cvs
+  git-mediawiki git-svn
+Рекомендуемые пакеты:
+  slirp4netns
+Следующие НОВЫЕ пакеты будут установлены:
+  containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras docker-scan-plugin git git-man liberror-perl pigz
+Обновлено 0 пакетов, установлено 9 новых пакетов, для удаления отмечено 0 пакетов, и 77 пакетов не обновлено.
+Необходимо скачать 107 MB/111 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 491 MB.
+Хотите продолжить? [Д/н] Д
+Пол:1 https://download.docker.com/linux/ubuntu xenial/stable amd64 containerd.io amd64 1.4.6-1 [28,0 MB]
+Пол:2 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce-cli amd64 5:20.10.7~3-0~ubuntu-xenial [41,1 MB]                       
+Пол:3 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce amd64 5:20.10.7~3-0~ubuntu-xenial [24,8 MB]                           
+Пол:4 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce-rootless-extras amd64 5:20.10.7~3-0~ubuntu-xenial [9 052 kB]          
+Пол:5 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-scan-plugin amd64 0.8.0~ubuntu-xenial [3 889 kB]                         
+Получено 107 MB за 46с (2 275 kB/s)                                                                                                                
+Выбор ранее не выбранного пакета pigz.
+(Чтение базы данных … на данный момент установлен 257691 файл и каталог.)
+Подготовка к распаковке …/pigz_2.3.1-2_amd64.deb …
+Распаковывается pigz (2.3.1-2) …
+Выбор ранее не выбранного пакета containerd.io.
+Подготовка к распаковке …/containerd.io_1.4.6-1_amd64.deb …
+Распаковывается containerd.io (1.4.6-1) …
+Выбор ранее не выбранного пакета docker-ce-cli.
+Подготовка к распаковке …/docker-ce-cli_5%3a20.10.7~3-0~ubuntu-xenial_amd64.deb …
+Распаковывается docker-ce-cli (5:20.10.7~3-0~ubuntu-xenial) …
+Выбор ранее не выбранного пакета docker-ce.
+Подготовка к распаковке …/docker-ce_5%3a20.10.7~3-0~ubuntu-xenial_amd64.deb …
+Распаковывается docker-ce (5:20.10.7~3-0~ubuntu-xenial) …
+Выбор ранее не выбранного пакета docker-ce-rootless-extras.
+Подготовка к распаковке …/docker-ce-rootless-extras_5%3a20.10.7~3-0~ubuntu-xenial_amd64.deb …
+Распаковывается docker-ce-rootless-extras (5:20.10.7~3-0~ubuntu-xenial) …
+Выбор ранее не выбранного пакета docker-scan-plugin.
+Подготовка к распаковке …/docker-scan-plugin_0.8.0~ubuntu-xenial_amd64.deb …
+Распаковывается docker-scan-plugin (0.8.0~ubuntu-xenial) …
+Выбор ранее не выбранного пакета liberror-perl.
+Подготовка к распаковке …/liberror-perl_0.17-1.2_all.deb …
+Распаковывается liberror-perl (0.17-1.2) …
+Выбор ранее не выбранного пакета git-man.
+Подготовка к распаковке …/git-man_1%3a2.7.4-0ubuntu1.10_all.deb …
+Распаковывается git-man (1:2.7.4-0ubuntu1.10) …
+Выбор ранее не выбранного пакета git.
+Подготовка к распаковке …/git_1%3a2.7.4-0ubuntu1.10_amd64.deb …
+Распаковывается git (1:2.7.4-0ubuntu1.10) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Обрабатываются триггеры для ureadahead (0.100.0-19) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.27) …
+Настраивается пакет pigz (2.3.1-2) …
+Настраивается пакет containerd.io (1.4.6-1) …
+Настраивается пакет docker-ce-cli (5:20.10.7~3-0~ubuntu-xenial) …
+Настраивается пакет docker-ce (5:20.10.7~3-0~ubuntu-xenial) …
+insserv: warning: script 'backup.sh' missing LSB tags and overrides
+Настраивается пакет docker-ce-rootless-extras (5:20.10.7~3-0~ubuntu-xenial) …
+Настраивается пакет docker-scan-plugin (0.8.0~ubuntu-xenial) …
+Настраивается пакет liberror-perl (0.17-1.2) …
+Настраивается пакет git-man (1:2.7.4-0ubuntu1.10) …
+Настраивается пакет git (1:2.7.4-0ubuntu1.10) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.27) …
+Обрабатываются триггеры для ureadahead (0.100.0-19) …
+
+nesterukia@nesterukia-VirtualBox:~$ docker -v
+Docker version 20.10.7, build f0df350
+  
+nesterukia@nesterukia-VirtualBox:~$ sudo docker ps -a
+CONTAINER ID   IMAGE         COMMAND   CREATED   STATUS        PORTS         NAMES
+
+nesterukia@nesterukia-VirtualBox:~$ sudo docker run ubuntu
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+e96e057aae67: Pull complete
+Digest: sha256:4b1d0c4a2d2aaf63b37111f34eb9fa89fa1bf53dd6e4ca954d47caebca4005c2
+Status: Downloaded newer image for ubuntu:latest
+
+nesterukia@nesterukia-VirtualBox:~$ sudo docker ps -a
+CONTAINER ID   IMAGE         COMMAND   CREATED             STATUS                         PORTS         NAMES
+f0c15d1e9a2e   ubuntu        "bash"        4 seconds ago   Exited (0) 3 seconds ago             silly_driscoll

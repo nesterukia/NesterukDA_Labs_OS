@@ -1,0 +1,252 @@
+nesterukia@nesterukia-VirtualBox:~$ sudo wget https://nginx.org/keys/nginx_signing.key
+--2022-11-29 12:53:52--  https://nginx.org/keys/nginx_signing.key
+Распознаётся nginx.org (nginx.org)... 3.125.197.172, 52.58.199.22, 2a05:d014:edb:5704::6, ...
+Подключение к nginx.org (nginx.org)|3.125.197.172|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа... 200 OK
+Длина: 1561 (1,5K) [application/octet-stream]
+Сохранение в каталог: ««nginx_signing.key»».
+
+
+nginx_signing.key            100%[=============================================>]   1,52K  --.-KB/s    in 0s      
+
+
+2022-11-29 12:53:53 (419 MB/s) - «nginx_signing.key» сохранён [1561/1561]
+
+
+nesterukia@nesterukia-VirtualBox:~$ sudo apt-key add nginx_signing.key
+OK
+
+nesterukia@nesterukia-VirtualBox:~$ sudo nano /etc/apt/sources.list
+
+nesterukia@nesterukia-VirtualBox:~$ sudo apt-get update
+Ошб:1 https://dbeaver.io/debs/dbeaver-ce  InRelease                                                               
+  Could not resolve host: dbeaver.io
+Пол:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [99,8 kB]                                       
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu xenial InRelease                                                        
+Пол:4 http://nginx.org/packages/mainline/ubuntu xenial InRelease [4 366 B]                                        
+Сущ:5 http://ppa.launchpad.net/linuxuprising/java/ubuntu xenial InRelease                                         
+Сущ:6 http://ru.archive.ubuntu.com/ubuntu xenial-updates InRelease                                                
+Сущ:7 http://ru.archive.ubuntu.com/ubuntu xenial-backports InRelease                                              
+Пол:8 http://nginx.org/packages/mainline/ubuntu xenial/nginx Sources [113 kB]                                     
+Пол:9 http://nginx.org/packages/mainline/ubuntu xenial/nginx amd64 Packages [117 kB]                              
+Пол:10 http://security.ubuntu.com/ubuntu xenial-security/main amd64 DEP-11 Metadata [93,8 kB]                     
+Пол:11 http://nginx.org/packages/mainline/ubuntu xenial/nginx i386 Packages [117 kB]                              
+Пол:12 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 DEP-11 Metadata [130 kB]                  
+Пол:13 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 DEP-11 Metadata [2 468 B]               
+Сущ:14 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease                                          
+Получено 677 kB за 1мин 32с (7 289 B/s)                        
+Чтение списков пакетов… Готово
+W: Не удалось получить https://dbeaver.io/debs/dbeaver-ce/InRelease  Could not resolve host: dbeaver.io
+W: Некоторые индексные файлы скачать не удалось. Они были проигнорированы, или вместо них были использованы старые версии.
+
+nesterukia@nesterukia-VirtualBox:~$ sudo apt-get install
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  linux-headers-4.15.0-45 linux-headers-4.15.0-45-generic linux-image-4.15.0-45-generic
+  linux-modules-4.15.0-45-generic linux-modules-extra-4.15.0-45-generic snapd-login-service
+Для их удаления используйте «sudo apt autoremove».
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 78 пакетов не обновлено.
+
+
+nesterukia@nesterukia-VirtualBox:~$ sudo apt-get install nginx
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  linux-headers-4.15.0-45 linux-headers-4.15.0-45-generic linux-image-4.15.0-45-generic
+  linux-modules-4.15.0-45-generic linux-modules-extra-4.15.0-45-generic snapd-login-service
+Для их удаления используйте «sudo apt autoremove».
+Следующие НОВЫЕ пакеты будут установлены:
+  nginx
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 78 пакетов не обновлено.
+Необходимо скачать 868 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 3 099 kB.
+Пол:1 http://nginx.org/packages/mainline/ubuntu xenial/nginx amd64 nginx amd64 1.21.0-1~xenial [868 kB]
+Получено 868 kB за 52с (16,5 kB/s)                                                                                
+Выбор ранее не выбранного пакета nginx.
+(Чтение базы данных … на данный момент установлено 257669 файлов и каталогов.)
+Подготовка к распаковке …/nginx_1.21.0-1~xenial_amd64.deb …
+----------------------------------------------------------------------
+
+
+Thanks for using nginx!
+
+
+Please find the official documentation for nginx here:
+* https://nginx.org/en/docs/
+
+
+Please subscribe to nginx-announce mailing list to get
+the most important news about nginx:
+* https://nginx.org/en/support.html
+
+
+Commercial subscriptions for nginx are available on:
+* https://nginx.com/products/
+
+
+----------------------------------------------------------------------
+Распаковывается nginx (1.21.0-1~xenial) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+Обрабатываются триггеры для systemd (229-4ubuntu21.27) …
+Обрабатываются триггеры для ureadahead (0.100.0-19) …
+Настраивается пакет nginx (1.21.0-1~xenial) …
+insserv: warning: script 'backup.sh' missing LSB tags and overrides
+Обрабатываются триггеры для systemd (229-4ubuntu21.27) …
+Обрабатываются триггеры для ureadahead (0.100.0-19) …
+
+nesterukia@nesterukia-VirtualBox:~$ sudo systemctl status nginx.service
+● nginx.service - nginx - high performance web server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: inactive (dead)
+     Docs: https://nginx.org/en/docs/
+
+nesterukia@nesterukia-VirtualBox:~$ sudo systemctl start nginx
+
+nesterukia@nesterukia-VirtualBox:~$ sudo systemctl status nginx.service
+● nginx.service - nginx - high performance web server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Вт 2022-11-29 13:13:32 MSK; 2s ago
+     Docs: https://nginx.org/en/docs/
+  Process: 4837 ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf (code=exited, status=0/SUCCESS)
+ Main PID: 4838 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─4838 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.con
+           └─4839 nginx: worker process                   
+
+
+дек 15 13:13:32 nesterukia-VirtualBox systemd[1]: Starting nginx - high performance web server...
+дек 15 13:13:32 nesterukia-VirtualBox systemd[1]: Started nginx - high performance web server.
+
+nesterukia@nesterukia-VirtualBox:~$ hostname -I
+192.168.108.113 
+
+nesterukia@nesterukia-VirtualBox:~$ sudo systemctl stop nginx
+
+nesterukia@nesterukia-VirtualBox:~$ sudo systemctl stop nginx.service
+
+nesterukia@nesterukia-VirtualBox:~$ sudo systemctl status nginx.service
+● nginx.service - nginx - high performance web server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: inactive (dead) since Вт 2022-11-29 13:22:06 MSK; 9s ago
+     Docs: https://nginx.org/en/docs/
+  Process: 4915 ExecStop=/bin/sh -c /bin/kill -s TERM $(/bin/cat /var/run/nginx.pid) (code=exited, status=0/SUCCESS
+  Process: 4837 ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf (code=exited, status=0/SUCCESS)
+ Main PID: 4838 (code=exited, status=0/SUCCESS)
+
+
+дек 15 13:13:32 nesterukia-VirtualBox systemd[1]: Starting nginx - high performance web server...
+дек 15 13:13:32 nesterukia-VirtualBox systemd[1]: Started nginx - high performance web server.
+дек 15 13:22:06 nesterukia-VirtualBox systemd[1]: Stopping nginx - high performance web server...
+дек 15 13:22:06 nesterukia-VirtualBox systemd[1]: Stopped nginx - high performance web server.
+дек 15 13:22:11 nesterukia-VirtualBox systemd[1]: Stopped nginx - high performance web server.
+lines 1-13/13 (END)
+
+nesterukia@nesterukia-VirtualBox:~$ sudo dpkg --remove nginx
+(Чтение базы данных … на данный момент установлено 257702 файла и каталога.)
+Удаляется nginx (1.21.0-1~xenial) …
+Обрабатываются триггеры для man-db (2.7.5-1) …
+
+nesterukia@nesterukia-VirtualBox:~$ sudo systemctl status nginx.service
+● nginx.service
+   Loaded: masked (/dev/null; bad)
+   Active: inactive (dead) since Вт 2022-11-29 13:22:06 MSK; 4min 8s ago
+ Main PID: 4838 (code=exited, status=0/SUCCESS)
+
+
+дек 15 13:13:32 nesterukia-VirtualBox systemd[1]: Starting nginx - high performance web server...
+дек 15 13:13:32 nesterukia-VirtualBox systemd[1]: Started nginx - high performance web server.
+дек 15 13:22:06 nesterukia-VirtualBox systemd[1]: Stopping nginx - high performance web server...
+дек 15 13:22:06 nesterukia-VirtualBox systemd[1]: Stopped nginx - high performance web server.
+дек 15 13:22:11 nesterukia-VirtualBox systemd[1]: Stopped nginx - high performance web server.
+дек 15 13:23:59 nesterukia-VirtualBox systemd[1]: Stopped nginx - high performance web server.
+
+
+
+
+
+
+nesterukia@nesterukia-VirtualBox:~$ snap find tetris
+Name                  Version   Publisher     Notes  Summary
+tetris                0.1.2     jogeanmcf     -      Tetris Game
+tetris-in-racket      1.2-2     brunonova     -      Tetris clone developed in Racket
+tetris-ever           20.21.11  joker2770     -      A simple tetris game is written with C, and is rendered by SDL2.
+tetris-ever-mixer     20.21.12  joker2770     -      A simple tetris game is written with C, and is rendered by SDL2.
+tetris-thefenriswolf  0.1.4.1   fenriswolf    -      A terminal interface for Tetris
+quadrapassel          40.2      canonical✓    -      Fit falling blocks together
+vitetris              0.57      bladernr      -      Console based version of Tetris
+fairtris              3.0.0.4   chronoscz     -      A fair implementation of Classic Tetris® video game.
+awesome-pygames       20.21.12  joker2770     -      Games by Al Sweigart. Manual at inventwithpython.com/pygame.
+ctris                 1.1       mitchel0022   -      An open source terminal based Tetris game
+stmg                  20210117  efanomars     -      Revisited classic games collection
+pmtris                1.0       kz6fittycent  -      Poor Man's Tetris Clone
+free-games-webapp     0.9.8     mauringo      -      A simple Application that provides some we-based static games.
+simtetris             1         piotr132      -      Simple version of tetris game
+
+nesterukia@nesterukia-VirtualBox:~$ sudo snap install tetris-ever
+[sudo] пароль для nesterukia: 
+tetris-ever 20.21.11 from Jintao Yang (joker2770) installed
+nesterukia@nesterukia-VirtualBox:~$ tetris-ever 
+
+
+i_mode: 0
+nesterukia@nesterukia-VirtualBox:~$ 
+
+
+
+
+
+
+nesterukia@nesterukia-VirtualBox:~$ sudo ufw status
+Состояние: неактивен
+
+nesterukia@nesterukia-VirtualBox:~$ sudo ufw allow 22
+Правила обновлены
+Правила обновлены (v6)
+
+nesterukia@nesterukia-VirtualBox:~$ sudo ufw allow 80
+Правила обновлены
+Правила обновлены (v6)
+
+nesterukia@nesterukia-VirtualBox:~$ sudo ufw enable
+Межсетевой экран включён и будет запускаться при запуске системы
+
+nesterukia@nesterukia-VirtualBox:~$ sudo ufw status
+Состояние: активен
+
+
+В                          Действие    Из
+-                          --------    --
+22                         ALLOW       Anywhere                  
+80                         ALLOW       Anywhere                  
+22 (v6)                    ALLOW       Anywhere (v6)             
+80 (v6)                    ALLOW       Anywhere (v6)             
+
+
+
+
+
+
+nesterukia@nesterukia-VirtualBox:~$ sudo sysctl -w net.ipv4.ip_forward=1
+net.ipv4.ip_forward = 1
+
+nesterukia@nesterukia-VirtualBox:~$ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+nesterukia@nesterukia-VirtualBox:~$ sudo iptables -t nat -L
+Chain PREROUTING (policy ACCEPT)
+target     prot opt source               destination         
+REDIRECT   tcp  --  anywhere             anywhere             tcp dpt:http redir ports 8080
+
+
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+
+Chain POSTROUTING (policy ACCEPT)
+target     prot opt source               destination         
+nesterukia@nesterukia-VirtualBox:~$

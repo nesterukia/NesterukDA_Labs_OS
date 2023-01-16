@@ -1,0 +1,443 @@
+[1.Потоки ввода/вывода]
+
+//Проверим что файла не существует//
+
+nesterukia@nesterukia-VirtualBox:~$ cat test.txt
+cat: test.txt: No such file or directory
+
+//Создадим файл//
+
+nesterukia@nesterukia-VirtualBox:~$ echo > test.txt
+nesterukia@nesterukia-VirtualBox:~$ ll test.txt
+-rw-r--r-- 1 nesterukia new_group 1 окт  5 12:44 test.txt
+
+//Прочитаем все файлы директории etc//
+
+nesterukia@nesterukia-VirtualBox:~$ cat /etc/* >test.txt 2>error2.txt
+nesterukia@nesterukia-VirtualBox:~$ ll test.txt
+-rw-r--r-- 1 nesterukia new_group 420731 окт  5 12:45 test.txt
+
+//Выведем ошибки//
+
+nesterukia@nesterukia-VirtualBox:~$ cat error2.txt
+cat: /etc/acpi: Is a directory
+cat: /etc/alsa: Is a directory
+cat: /etc/alternatives: Is a directory
+cat: /etc/apm: Is a directory
+cat: /etc/apparmor: Is a directory
+cat: /etc/apparmor.d: Is a directory
+cat: /etc/apport: Is a directory
+cat: /etc/apt: Is a directory
+cat: /etc/avahi: Is a directory
+cat: /etc/bash_completion.d: Is a directory
+cat: /etc/binfmt.d: Is a directory
+cat: /etc/bluetooth: Is a directory
+cat: /etc/brlapi.key: Permission denied
+cat: /etc/brltty: Is a directory
+cat: /etc/ca-certificates: Is a directory
+cat: /etc/chatscripts: Is a directory
+cat: /etc/console-setup: Is a directory
+cat: /etc/cracklib: Is a directory
+cat: /etc/cron.d: Is a directory
+cat: /etc/cron.daily: Is a directory
+cat: /etc/cron.hourly: Is a directory
+cat: /etc/cron.monthly: Is a directory
+cat: /etc/cron.weekly: Is a directory
+cat: /etc/cups: Is a directory
+cat: /etc/cupshelpers: Is a directory
+cat: /etc/dbus-1: Is a directory
+cat: /etc/dconf: Is a directory
+cat: /etc/default: Is a directory
+cat: /etc/depmod.d: Is a directory
+cat: /etc/dhcp: Is a directory
+cat: /etc/dictionaries-common: Is a directory
+cat: /etc/dpkg: Is a directory
+cat: /etc/emacs: Is a directory
+cat: /etc/environment.d: Is a directory
+cat: /etc/firefox: Is a directory
+cat: /etc/fonts: Is a directory
+cat: /etc/fwupd: Is a directory
+cat: /etc/gdb: Is a directory
+cat: /etc/gdm3: Is a directory
+cat: /etc/geoclue: Is a directory
+cat: /etc/ghostscript: Is a directory
+cat: /etc/glvnd: Is a directory
+cat: /etc/gnome: Is a directory
+cat: /etc/groff: Is a directory
+cat: /etc/grub.d: Is a directory
+cat: /etc/gshadow: Permission denied
+cat: /etc/gshadow-: Permission denied
+cat: /etc/gss: Is a directory
+cat: /etc/gtk-2.0: Is a directory
+cat: /etc/gtk-3.0: Is a directory
+cat: /etc/hp: Is a directory
+cat: /etc/ifplugd: Is a directory
+cat: /etc/init: Is a directory
+cat: /etc/init.d: Is a directory
+cat: /etc/initramfs-tools: Is a directory
+cat: /etc/insserv.conf.d: Is a directory
+cat: /etc/ipp-usb: Is a directory
+cat: /etc/iproute2: Is a directory
+cat: /etc/kernel: Is a directory
+cat: /etc/ldap: Is a directory
+cat: /etc/ld.so.conf.d: Is a directory
+cat: /etc/libblockdev: Is a directory
+cat: /etc/libnl-3: Is a directory
+cat: /etc/libpaper.d: Is a directory
+cat: /etc/libreoffice: Is a directory
+cat: /etc/logcheck: Is a directory
+cat: /etc/logrotate.d: Is a directory
+cat: /etc/ModemManager: Is a directory
+cat: /etc/modprobe.d: Is a directory
+cat: /etc/modules-load.d: Is a directory
+cat: /etc/netplan: Is a directory
+cat: /etc/network: Is a directory
+cat: /etc/networkd-dispatcher: Is a directory
+cat: /etc/NetworkManager: Is a directory
+cat: /etc/newt: Is a directory
+cat: /etc/openvpn: Is a directory
+cat: /etc/opt: Is a directory
+cat: /etc/PackageKit: Is a directory
+cat: /etc/pam.d: Is a directory
+cat: /etc/pcmcia: Is a directory
+cat: /etc/perl: Is a directory
+cat: /etc/pki: Is a directory
+cat: /etc/pm: Is a directory
+cat: /etc/polkit-1: Is a directory
+cat: /etc/ppp: Is a directory
+cat: /etc/profile.d: Is a directory
+cat: /etc/pulse: Is a directory
+cat: /etc/python3: Is a directory
+cat: /etc/python3.10: Is a directory
+cat: /etc/rc0.d: Is a directory
+cat: /etc/rc1.d: Is a directory
+cat: /etc/rc2.d: Is a directory
+cat: /etc/rc3.d: Is a directory
+cat: /etc/rc4.d: Is a directory
+cat: /etc/rc5.d: Is a directory
+cat: /etc/rc6.d: Is a directory
+cat: /etc/rcS.d: Is a directory
+cat: /etc/rsyslog.d: Is a directory
+cat: /etc/sane.d: Is a directory
+cat: /etc/security: Is a directory
+cat: /etc/selinux: Is a directory
+cat: /etc/sensors.d: Is a directory
+cat: /etc/sgml: Is a directory
+cat: /etc/shadow: Permission denied
+cat: /etc/shadow-: Permission denied
+cat: /etc/skel: Is a directory
+cat: /etc/snmp: Is a directory
+cat: /etc/speech-dispatcher: Is a directory
+cat: /etc/ssh: Is a directory
+cat: /etc/ssl: Is a directory
+cat: /etc/sudoers: Permission denied
+cat: /etc/sudoers.d: Is a directory
+cat: /etc/sysctl.d: Is a directory
+cat: /etc/systemd: Is a directory
+cat: /etc/terminfo: Is a directory
+cat: /etc/thermald: Is a directory
+cat: /etc/thunderbird: Is a directory
+cat: /etc/tmpfiles.d: Is a directory
+cat: /etc/ubuntu-advantage: Is a directory
+cat: /etc/udev: Is a directory
+cat: /etc/udisks2: Is a directory
+cat: /etc/ufw: Is a directory
+cat: /etc/update-manager: Is a directory
+cat: /etc/update-motd.d: Is a directory
+cat: /etc/update-notifier: Is a directory
+cat: /etc/UPower: Is a directory
+cat: /etc/usb_modeswitch.d: Is a directory
+cat: /etc/vim: Is a directory
+cat: /etc/vmware-tools: Is a directory
+cat: /etc/vulkan: Is a directory
+cat: /etc/wpa_supplicant: Is a directory
+cat: /etc/X11: Is a directory
+cat: /etc/xdg: Is a directory
+cat: /etc/xml: Is a directory
+
+[2. Конвеер (pipeline)]
+
+nesterukia@nesterukia-VirtualBox:~$ ls -l /etc
+total 1144
+drwxr-xr-x  3 root root    4096 авг  9 14:50 acpi
+-rw-r--r--  1 root root    3028 авг  9 14:48 adduser.conf
+drwxr-xr-x  3 root root    4096 авг  9 14:49 alsa
+drwxr-xr-x  2 root root    4096 ноя  9 17:05 alternatives
+-rw-r--r--  1 root root     335 мар 23  2022 anacrontab
+-rw-r--r--  1 root root     433 мар 23  2022 apg.conf
+drwxr-xr-x  5 root root    4096 авг  9 14:49 apm
+drwxr-xr-x  3 root root    4096 авг  9 14:50 apparmor
+drwxr-xr-x  7 root root    4096 окт  2 21:50 apparmor.d
+drwxr-xr-x  4 root root    4096 авг  9 14:51 apport
+-rw-r--r--  1 root root     769 фев 22  2022 appstream.conf
+drwxr-xr-x  8 root root    4096 окт  2 21:51 apt
+drwxr-xr-x  3 root root    4096 авг  9 14:51 avahi
+-rw-r--r--  1 root root    2319 янв  6  2022 bash.bashrc
+-rw-r--r--  1 root root      45 ноя 11  2021 bash_completion
+drwxr-xr-x  2 root root    4096 авг  9 14:51 bash_completion.d
+-rw-r--r--  1 root root     367 дек 16  2020 bindresvport.blacklist
+drwxr-xr-x  2 root root    4096 апр  7  2022 binfmt.d
+drwxr-xr-x  2 root root    4096 авг  9 14:50 bluetooth
+-rw-r-----  1 root root      33 авг  9 14:51 brlapi.key
+drwxr-xr-x  7 root root    4096 авг  9 14:50 brltty
+-rw-r--r--  1 root root   29219 июн 28 18:25 brltty.conf
+drwxr-xr-x  3 root root    4096 авг  9 14:48 ca-certificates
+-rw-r--r--  1 root root    5529 авг  9 14:48 ca-certificates.conf
+drwxr-s---  2 root dip     4096 авг  9 14:50 chatscripts
+drwxr-xr-x  2 root root    4096 окт  2 21:48 console-setup
+drwxr-xr-x  2 root root    4096 авг  9 14:50 cracklib
+drwxr-xr-x  2 root root    4096 окт  2 21:50 cron.d
+drwxr-xr-x  2 root root    4096 авг  9 14:51 cron.daily
+drwxr-xr-x  2 root root    4096 авг  9 14:48 cron.hourly
+drwxr-xr-x  2 root root    4096 авг  9 14:50 cron.monthly
+-rw-r--r--  1 root root    1136 мар 23  2022 crontab
+drwxr-xr-x  2 root root    4096 авг  9 14:51 cron.weekly
+drwxr-xr-x  5 root lp      4096 ноя  9 16:09 cups
+drwxr-xr-x  2 root root    4096 авг  9 14:51 cupshelpers
+drwxr-xr-x  2 root root    4096 ноя  9 17:06 darkstat
+drwxr-xr-x  4 root root    4096 авг  9 14:48 dbus-1
+drwxr-xr-x  4 root root    4096 авг  9 14:49 dconf
+-rw-r--r--  1 root root    2969 фев 20  2022 debconf.conf
+-rw-r--r--  1 root root      13 авг 22  2021 debian_version
+drwxr-xr-x  3 root root    4096 окт  3 20:51 default
+-rw-r--r--  1 root root     604 сен 16  2018 deluser.conf
+drwxr-xr-x  2 root root    4096 авг  9 14:48 depmod.d
+drwxr-xr-x  4 root root    4096 авг  9 14:48 dhcp
+drwxr-xr-x  2 root root    4096 окт  2 21:49 dictionaries-common
+drwxr-xr-x  4 root root    4096 авг  9 14:48 dpkg
+-rw-r--r--  1 root root     685 янв  8  2022 e2scrub.conf
+drwxr-xr-x  3 root root    4096 авг  9 14:49 emacs
+-rw-r--r--  1 root root     106 авг  9 14:48 environment
+drwxr-xr-x  2 root root    4096 авг  9 14:51 environment.d
+-rw-r--r--  1 root root    1816 дек 27  2019 ethertypes
+drwxr-xr-x  3 root root    4096 авг  9 14:49 firefox
+drwxr-xr-x  4 root root    4096 авг  9 14:50 fonts
+-rw-r--r--  1 root root      20 фев 24  2022 fprintd.conf
+-rw-rw-r--  1 root root     665 окт  2 21:40 fstab
+-rw-r--r--  1 root root     694 мар 23  2022 fuse.conf
+drwxr-xr-x  3 root root    4096 авг  9 14:51 fwupd
+-rw-r--r--  1 root root    2584 фев  3  2022 gai.conf
+drwxr-xr-x  3 root root    4096 авг  9 14:51 gdb
+drwxr-xr-x  8 root root    4096 авг  9 14:51 gdm3
+drwxr-xr-x  2 root root    4096 авг  9 14:51 geoclue
+drwxr-xr-x  4 root root    4096 авг  9 14:49 ghostscript
+drwxr-xr-x  3 root root    4096 авг  9 14:49 glvnd
+drwxr-xr-x  2 root root    4096 авг  9 14:50 gnome
+drwxr-xr-x  2 root root    4096 авг  9 14:50 groff
+-rw-r--r--  1 root root    1268 окт  5 13:31 group
+-rw-r--r--  1 root root    1252 окт  5 13:31 group-
+drwxr-xr-x  2 root root    4096 авг  9 14:54 grub.d
+-rw-r-----  1 root shadow  1051 окт  5 13:31 gshadow
+-rw-r-----  1 root shadow  1039 окт  5 13:31 gshadow-
+drwxr-xr-x  3 root root    4096 фев 21  2022 gss
+drwxr-xr-x  2 root root    4096 авг  9 14:50 gtk-2.0
+drwxr-xr-x  2 root root    4096 авг  9 14:51 gtk-3.0
+-rw-r--r--  1 root root    4436 дек 16  2020 hdparm.conf
+-rw-r--r--  1 root root      92 окт 15  2021 host.conf
+-rw-r--r--  1 root root       4 авг  9 14:52 hostid
+-rw-r--r--  1 root root      22 окт  2 21:47 hostname
+-rw-r--r--  1 root root     236 окт  2 21:47 hosts
+-rw-r--r--  1 root root     411 авг  9 14:50 hosts.allow
+-rw-r--r--  1 root root     711 авг  9 14:50 hosts.deny
+drwxr-xr-x  2 root root    4096 авг  9 14:51 hp
+drwxr-xr-x  3 root root    4096 авг  9 14:50 ifplugd
+drwxr-xr-x  2 root root    4096 окт  2 21:50 init
+drwxr-xr-x  2 root root    4096 ноя  9 17:05 init.d
+drwxr-xr-x  5 root root    4096 авг  9 14:51 initramfs-tools
+-rw-r--r--  1 root root    1748 янв  6  2022 inputrc
+drwxr-xr-x  2 root root    4096 авг  9 14:51 insserv.conf.d
+drwxr-xr-x  2 root root    4096 авг  9 14:51 ipp-usb
+drwxr-xr-x  4 root root    4096 авг  9 14:48 iproute2
+-rw-r--r--  1 root root      26 июл 28 18:29 issue
+-rw-r--r--  1 root root      19 июл 28 18:29 issue.net
+drwxr-xr-x  6 root root    4096 авг  9 14:50 kernel
+-rw-r--r--  1 root root     110 окт  2 21:49 kernel-img.conf
+-rw-r--r--  1 root root    1308 мар 24  2022 kerneloops.conf
+drwxr-xr-x  2 root root    4096 авг  9 14:50 ldap
+-rw-r--r--  1 root root   57359 ноя  9 17:05 ld.so.cache
+-rw-r--r--  1 root root      34 дек 16  2020 ld.so.conf
+drwxr-xr-x  2 root root    4096 авг  9 14:48 ld.so.conf.d
+-rw-r--r--  1 root root     267 окт 15  2021 legal
+-rw-r--r--  1 root root      27 мар 13  2022 libao.conf
+-rw-r--r--  1 root root     191 мар 17  2022 libaudit.conf
+drwxr-xr-x  3 root root    4096 авг  9 14:49 libblockdev
+drwxr-xr-x  2 root root    4096 авг  9 14:50 libnl-3
+drwxr-xr-x  2 root root    4096 мар 24  2022 libpaper.d
+drwxr-xr-x  3 root root    4096 окт  2 21:48 libreoffice
+-rw-r--r--  1 root root    2996 мар  4  2022 locale.alias
+-rw-r--r--  1 root root    9454 окт  2 21:47 locale.gen
+lrwxrwxrwx  1 root root      33 окт  2 21:48 localtime -> /usr/share/zoneinfo/Europe/Moscow
+drwxr-xr-x  4 root root    4096 авг  9 14:49 logcheck
+-rw-r--r--  1 root root   10734 ноя 11  2021 login.defs
+-rw-r--r--  1 root root     592 янв 24  2022 logrotate.conf
+drwxr-xr-x  2 root root    4096 окт  2 21:50 logrotate.d
+-rw-r--r--  1 root root     104 июл 28 18:29 lsb-release
+-r--r--r--  1 root root      33 окт  2 21:57 machine-id
+-rw-r--r--  1 root root     111 мар 24  2022 magic
+-rw-r--r--  1 root root     111 мар 24  2022 magic.mime
+-rw-r--r--  1 root root   36240 окт  5 17:03 mailcap
+-rw-r--r--  1 root root     449 дек 11  2021 mailcap.order
+-rw-r--r--  1 root root    5217 мар 17  2022 manpath.config
+-rw-r--r--  1 root root   72029 мар 21  2022 mime.types
+-rw-r--r--  1 root root     744 янв  8  2022 mke2fs.conf
+drwxr-xr-x  3 root root    4096 авг  9 14:50 ModemManager
+drwxr-xr-x  2 root root    4096 авг  9 14:50 modprobe.d
+-rw-r--r--  1 root root     195 авг  9 14:48 modules
+drwxr-xr-x  2 root root    4096 авг  9 14:51 modules-load.d
+lrwxrwxrwx  1 root root      19 окт  2 21:48 mtab -> ../proc/self/mounts
+-rw-r--r--  1 root root   11204 фев  9  2022 nanorc
+-rw-r--r--  1 root root     767 мар 24  2022 netconfig
+drwxr-xr-x  2 root root    4096 авг  9 14:55 netplan
+drwxr-xr-x  6 root root    4096 авг  9 14:50 network
+drwxr-xr-x  8 root root    4096 авг  9 14:48 networkd-dispatcher
+drwxr-xr-x  7 root root    4096 авг  9 14:51 NetworkManager
+-rw-r--r--  1 root root      91 окт 15  2021 networks
+drwxr-xr-x  2 root root    4096 авг  9 14:48 newt
+-rwxr-xr-x  1 root root     228 мар 23  2022 nftables.conf
+-rw-r--r--  1 root root     542 окт  2 21:50 nsswitch.conf
+drwxr-xr-x  4 root root    4096 авг  9 14:50 openvpn
+drwxr-xr-x  2 root root    4096 авг  9 14:48 opt
+lrwxrwxrwx  1 root root      21 окт  2 21:42 os-release -> ../usr/lib/os-release
+drwxr-xr-x  2 root root    4096 авг  9 14:51 PackageKit
+-rw-r--r--  1 root root     552 авг 12  2020 pam.conf
+drwxr-xr-x  2 root root    4096 окт  3 20:51 pam.d
+-rw-rw-r--  1 root root       3 окт  2 21:48 papersize
+-rw-r--r--  1 root root    3129 окт  5 13:31 passwd
+-rw-r--r--  1 root root    3181 окт  5 13:30 passwd-
+drwxr-xr-x  2 root root    4096 авг  9 14:50 pcmcia
+drwxr-xr-x  3 root root    4096 авг  9 14:49 perl
+drwxr-xr-x  4 root root    4096 авг  9 14:49 pki
+drwxr-xr-x  3 root root    4096 авг  9 14:49 pm
+-rw-r--r--  1 root root    7649 авг  9 14:51 pnm2ppa.conf
+drwxr-xr-x  4 root root    4096 авг  9 14:49 polkit-1
+drwxr-xr-x  8 root dip     4096 авг  9 14:50 ppp
+-rw-r--r--  1 root root     582 окт 15  2021 profile
+drwxr-xr-x  2 root root    4096 авг  9 14:51 profile.d
+-rw-r--r--  1 root root    2932 апр  2  2013 protocols
+drwxr-xr-x  4 root root    4096 авг  9 14:51 pulse
+drwxr-xr-x  2 root root    4096 авг  9 14:48 python3
+drwxr-xr-x  2 root root    4096 авг  9 14:48 python3.10
+drwxr-xr-x  2 root root    4096 ноя  9 16:33 rc0.d
+drwxr-xr-x  2 root root    4096 ноя  9 16:33 rc1.d
+drwxr-xr-x  2 root root    4096 ноя  9 16:33 rc2.d
+drwxr-xr-x  2 root root    4096 ноя  9 16:33 rc3.d
+drwxr-xr-x  2 root root    4096 ноя  9 16:33 rc4.d
+drwxr-xr-x  2 root root    4096 ноя  9 16:33 rc5.d
+drwxr-xr-x  2 root root    4096 ноя  9 16:33 rc6.d
+drwxr-xr-x  2 root root    4096 окт  2 21:50 rcS.d
+lrwxrwxrwx  1 root root      39 окт  2 21:47 resolv.conf -> ../run/systemd/resolve/stub-resolv.conf
+lrwxrwxrwx  1 root root      13 окт  2 21:42 rmt -> /usr/sbin/rmt
+-rw-r--r--  1 root root     887 апр  1  2013 rpc
+-rw-r--r--  1 root root    1382 дек 24  2021 rsyslog.conf
+drwxr-xr-x  2 root root    4096 авг  9 14:51 rsyslog.d
+-rw-r--r--  1 root root    5620 янв  9  2022 rygel.conf
+drwxr-xr-x  3 root root    4096 авг  9 14:51 sane.d
+drwxr-xr-x  4 root root    4096 авг  9 14:50 security
+drwxr-xr-x  2 root root    4096 авг  9 14:48 selinux
+-rw-r--r--  1 root root   10593 апр  1  2022 sensors3.conf
+drwxr-xr-x  2 root root    4096 авг  9 14:50 sensors.d
+-rw-r--r--  1 root root   12813 мар 28  2021 services
+drwxr-xr-x  3 root root    4096 авг  9 14:51 sgml
+-rw-r-----  1 root shadow  1865 окт  5 13:31 shadow
+-rw-r-----  1 root shadow  1965 окт  5 13:30 shadow-
+-rw-r--r--  1 root root     128 авг  9 14:48 shells
+drwxr-xr-x  2 root root    4096 авг  9 14:48 skel
+drwxr-xr-x  2 root root    4096 авг  9 14:50 snmp
+drwxr-xr-x  4 root root    4096 авг  9 14:51 speech-dispatcher
+drwxr-xr-x  4 root root    4096 окт  3 20:51 ssh
+drwxr-xr-x  4 root root    4096 авг  9 14:48 ssl
+-rw-r--r--  1 root root     109 окт  5 13:31 subgid
+-rw-r--r--  1 root root     129 окт  5 13:30 subgid-
+-rw-r--r--  1 root root     109 окт  5 13:31 subuid
+-rw-r--r--  1 root root     129 окт  5 13:30 subuid-
+-rw-r--r--  1 root root    4573 фев 14  2022 sudo.conf
+-r--r-----  1 root root    1671 фев  8  2022 sudoers
+drwxr-xr-x  2 root root    4096 окт  2 21:50 sudoers.d
+-rw-r--r--  1 root root    9390 фев 14  2022 sudo_logsrvd.conf
+-rw-r--r--  1 root root    2355 фев 25  2022 sysctl.conf
+drwxr-xr-x  2 root root    4096 авг  9 14:48 sysctl.d
+drwxr-xr-x  5 root root    4096 авг  9 14:50 systemd
+drwxr-xr-x  2 root root    4096 авг  9 14:48 terminfo
+drwxr-xr-x  2 root root    4096 авг  9 14:51 thermald
+drwxr-xr-x  2 root root    4096 авг  9 14:51 thunderbird
+-rw-r--r--  1 root root      14 окт  2 21:48 timezone
+drwxr-xr-x  2 root root    4096 апр  7  2022 tmpfiles.d
+drwxr-xr-x  2 root root    4096 авг  9 14:48 ubuntu-advantage
+-rw-r--r--  1 root root    1260 июн 16  2020 ucf.conf
+drwxr-xr-x  4 root root    4096 авг  9 14:48 udev
+drwxr-xr-x  2 root root    4096 авг  9 14:51 udisks2
+drwxr-xr-x  3 root root    4096 авг  9 14:51 ufw
+drwxr-xr-x  3 root root    4096 авг  9 14:51 update-manager
+drwxr-xr-x  2 root root    4096 авг  9 14:51 update-motd.d
+drwxr-xr-x  2 root root    4096 мар 30  2022 update-notifier
+drwxr-xr-x  2 root root    4096 авг  9 14:50 UPower
+-rw-r--r--  1 root root    1523 мар 25  2022 usb_modeswitch.conf
+drwxr-xr-x  2 root root    4096 сен  6  2021 usb_modeswitch.d
+-rw-r--r--  1 root root      51 апр  9  2020 vdpau_wrapper.cfg
+drwxr-xr-x  2 root root    4096 авг  9 14:48 vim
+drwxr-xr-x  4 root root    4096 окт  2 21:51 vmware-tools
+lrwxrwxrwx  1 root root      23 окт  2 21:42 vtrgb -> /etc/alternatives/vtrgb
+drwxr-xr-x  5 root root    4096 авг  9 14:49 vulkan
+-rw-r--r--  1 root root    4942 янв 24  2022 wgetrc
+drwxr-xr-x  2 root root    4096 авг  9 14:51 wpa_supplicant
+drwxr-xr-x 12 root root    4096 авг  9 14:51 X11
+-rw-r--r--  1 root root     681 мар 23  2022 xattr.conf
+drwxr-xr-x  6 root root    4096 авг  9 14:49 xdg
+drwxr-xr-x  2 root root    4096 авг  9 14:51 xml
+-rw-r--r--  1 root root     460 дек  8  2021 zsh_command_not_found
+
+// Создадим конвеер и отсортируем//
+
+nesterukia@nesterukia-VirtualBox:~$ ls -l /etc | cut -f 1 -d ' '| sort | uniq
+drwxr-s---
+drwxr-xr-x
+lrwxrwxrwx
+-r--r-----
+-r--r--r--
+-rw-r-----
+-rw-r--r--
+-rw-rw-r--
+-rwxr-xr-x
+total
+
+[3. Управление процессами]
+
+nesterukia@nesterukia-VirtualBox:~$ nano /etc/ssh/sshd_config
+nesterukia@nesterukia-VirtualBox:~$ sudo nano /etc/ssh/sshd_config
+[sudo] password for nesterukia: 
+nesterukia@nesterukia-VirtualBox:~$ systemctl restart sshd
+Failed to restart sshd.service: Connection timed out
+See system logs and 'systemctl status sshd.service' for details.
+nesterukia@nesterukia-VirtualBox:~$ systemctl restart sshd
+nesterukia@nesterukia-VirtualBox:~$ sudo nano /etc/ssh/sshd_config
+nesterukia@nesterukia-VirtualBox:~$ systemctl reload sshd
+nesterukia@nesterukia-VirtualBox:~$ cat > lab3file
+catcatcatcatcat
+
+
+
+
+
+
+EOF
+nesterukia@nesterukia-VirtualBox:~$ 
+
+//Restart останавливает службу и заново запускает, а Reload дает команду службе перечитать файлы конфигурации без остановки работы //
+
+// Нажатие Ctrl+D говорит терминалу, что надо зарегистрировать так называемый EOF (end of file), то есть поток ввода окончен, процессор интерпретирует это как желание выйти из программы//
+
+[4. Сигналы процессам]
+
+nesterukia@nesterukia-VirtualBox:~$ mc
+
+nesterukia@nesterukia-VirtualBox:~$ ps aux | grep mc
+nesteru+   17607  0.0  0.4  31580 10008 pts/1    S+   02:10   0:00 mc
+nesteru+   17616  0.0  0.1  17864  2404 pts/0    S+   02:10   0:00 grep --color=auto mc
+
+nesterukia@nesterukia-VirtualBox:~$ sudo kill 9
+[sudo] password for nesterukia: 
+
+nesterukia@nesterukia-VirtualBox:~$ 
+
+
+

@@ -1,0 +1,76 @@
+[1. Именнованный канал]
+
+-/Первое окно терминала/:
+
+nesterukia@nesterukia-VirtualBox:~$ mkfifo new_pipe
+nesterukia@nesterukia-VirtualBox:~$ ll
+total 180
+drwxr-x--- 19 nesterukia new_group  4096 ноя 10 07:05 ./
+drwxr-xr-x  9 root       root       4096 окт  5 13:30 ../
+{...}
+-rw-r--r--  2 nesterukia new_group   161 ноя 10 04:09 new_name.txt
+prw-r--r--  1 nesterukia new_group     0 ноя 10 07:05 new_pipe|
+drwxr-xr-x  2 nesterukia new_group  4096 окт  2 21:58 Pictures/
+{...}
+
+nesterukia@nesterukia-VirtualBox:~$ echo "Hello World!" > new_pipe
+
+-/Второе окно терминала/:
+
+nesterukia@nesterukia-VirtualBox:~$ tail -f ./new_pipe
+Hello world!
+
+
+-/Третье окно терминала/:
+
+nesterukia@nesterukia-VirtualBox:~$ tail -f ./new_pipe
+-Пустая строка-
+
+//Соответственно может быть только один читатель//
+
+[2. Сигналы]
+
+-/Первое окно терминала/:
+
+nesterukia@nesterukia-VirtualBox:~$ kill -l
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX	
+
+nesterukia@nesterukia-VirtualBox:~$ ps aux | grep tail
+nesteru+   21463  0.0  0.0  17056  1000 pts/1    S+   07:31   0:00 tail -f ./new_pipe
+nesteru+   21484  0.0  0.1  17864  2316 pts/0    S+   07:34   0:00 grep --color=auto tail
+nesterukia@nesterukia-VirtualBox:~$ kill -15 21463
+
+-/Второе окно терминала/:
+
+nesterukia@nesterukia-VirtualBox:~$ tail -f ./new_pipe
+Hello world!
+Terminated
+nesterukia@nesterukia-VirtualBox:~$ 
+
+[3. Неименнованный канал]
+
+nesterukia@nesterukia-VirtualBox:~$ find /usr/ | grep Lab | sort
+/usr/lib/libreoffice/share/config/soffice.cfg/modules/schart/ui/dlg_DataLabel.ui
+/usr/lib/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_axisLabel.ui
+/usr/lib/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_DataLabel.ui
+/usr/share/libreoffice/help/media/icon-themes/sd/res/presenterscreen-LabelMouseOverCenter.svg
+/usr/share/libreoffice/help/media/icon-themes/sd/res/presenterscreen-LabelMouseOverLeft.svg
+/usr/share/libreoffice/help/media/icon-themes/sd/res/presenterscreen-LabelMouseOverRight.svg
+/usr/share/remmina/theme/Lab Fox.colors
+
+Неименованные каналы подобны именованным, но они в файловой системе не существуют. Они не имеют путевых имен, ассоциированных с ними, и все они и их следы исчезают после того, как последний файловый дескриптор, ссылающийся на них, закрывается. Они почти исключительно используются для межпроцессных коммуникаций между дочерними и родительскими процессами либо между родственными процессами.
+
+
+
